@@ -1,0 +1,16 @@
+import reactor.core.publisher.Mono;
+
+public class EjemploMonoRxJava {
+    public static void main(String[] args) {
+        // Creamos un Mono que representa una operación asincrónica
+        Mono<String> monoResultado = Mono.just("Este es un valor único");
+
+        // Suscribimos un observador para recibir el resultado
+        monoResultado.subscribe(
+            valor -> System.out.println("Valor recibido: " + valor),
+            error -> System.err.println("Error: " + error),
+            () -> System.out.println("Operación completada")
+        );
+    }
+}
+

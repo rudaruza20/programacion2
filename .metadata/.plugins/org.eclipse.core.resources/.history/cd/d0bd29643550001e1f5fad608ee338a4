@@ -1,0 +1,21 @@
+import io.reactivex.Observable;
+
+public class EjemploReactiveX {
+    public static void main(String[] args) {
+        // Crear un flujo de datos observable
+        Observable<Integer> flujo = Observable.just(1, 2, 3, 4, 5);
+
+        // Suscribirse al flujo y realizar una acción cuando se emiten eventos
+        flujo.subscribe(
+            numero -> System.out.println("Número: " + numero),
+            error -> System.err.println("Error: " + error.getMessage()),
+            () -> System.out.println("Flujo completado")
+        );
+    }
+}
+
+
+
+
+
+
